@@ -2,8 +2,8 @@
 %define	modprefix	Catalyst
 %define	name		perl-%{module}
 
-%define	version		5.7006
-%define	realversion	5.7006
+%define	version		5.7007
+%define	realversion	%{version}
 
 %define	release		%mkrel 1
 
