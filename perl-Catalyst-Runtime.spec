@@ -51,7 +51,6 @@ Requires:	perl-HTTP-Request-AsCGI >= 0.5
 Provides:	perl-Catalyst = %{version}-%{release}
 Obsoletes:	perl-Catalyst
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-buildroot
 %description
 Catalyst is an elegant web application framework, extremely flexible yet
 extremely simple. It's similar to Ruby on Rails, Spring (Java) and Maypole,
