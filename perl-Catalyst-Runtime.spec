@@ -5,7 +5,7 @@
 %define	version		5.7014
 %define	realversion	%{version}
 
-%define	release		%mkrel 1
+%define	release		%mkrel 2
 
 Summary:	The Elegant MVC Web Application Framework
 Name:		%{name}
