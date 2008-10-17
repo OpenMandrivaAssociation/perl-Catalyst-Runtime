@@ -2,10 +2,10 @@
 %define	modprefix	Catalyst
 %define	name		perl-%{module}
 
-%define	version		5.7014
+%define	version		5.7015
 %define	realversion	%{version}
 
-%define	release		%mkrel 2
+%define	release		%mkrel 1
 
 Summary:	The Elegant MVC Web Application Framework
 Name:		%{name}
