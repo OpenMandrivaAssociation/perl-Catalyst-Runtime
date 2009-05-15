@@ -2,7 +2,7 @@
 %define	modprefix	Catalyst
 %define	name		perl-%{module}
 
-%define	version		5.7015
+%define	version		5.71001
 %define	realversion	%{version}
 
 %define	release		%mkrel 1
@@ -14,7 +14,7 @@ Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}/
-Source:		http://www.cpan.org/modules/by-module/%{modprefix}/%{module}-%{realversion}.tar.bz2
+Source:		http://www.cpan.org/modules/by-module/%{modprefix}/%{module}-%{realversion}.tar.gz
 Patch0:		Catalyst-Runtime-noauto_instal.patch
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel >= 5.8.1
