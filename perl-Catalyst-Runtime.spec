@@ -19,6 +19,7 @@ BuildRequires:	perl-devel >= 5.8.1
 BuildRequires:	perl(B::Hooks::EndOfScope)
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(CGI::Simple::Cookie)
+BuildRequires:	perl(Class::Accessor::Fast)
 BuildRequires:	perl(Class::C3::Adopt::NEXT)
 BuildRequires:	perl(Class::Data::Inheritable)
 BuildRequires:	perl(Class::MOP)
