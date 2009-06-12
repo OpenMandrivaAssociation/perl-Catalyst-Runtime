@@ -16,11 +16,11 @@ Patch0:		Catalyst-Runtime-noauto_instal.patch
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel >= 5.8.1
 %endif
+BuildRequires:	perl(B::Hooks::EndOfScope)
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(CGI::Simple::Cookie)
-BuildRequires:	perl(Class::Accessor::Fast)
-BuildRequires:	perl(Class::Data::Inheritable)
-BuildRequires:	perl(Class::Inspector) >= 1.06
+BuildRequires:	perl(Class::C3::Adopt::NEXT)
+BuildRequires:	perl(Class::MOP)
 BuildRequires:	perl(Data::Dump)
 BuildRequires:	perl(File::Modified)
 BuildRequires:	perl(HTML::Entities)
@@ -30,10 +30,16 @@ BuildRequires:	perl(HTTP::Request)
 BuildRequires:	perl(HTTP::Request::AsCGI) >= 0.5
 BuildRequires:	perl(HTTP::Response)
 BuildRequires:	perl(LWP::UserAgent)
+BuildRequires:	perl(MRO::Compat)
 BuildRequires:	perl(Module::Pluggable) >= 3.01
-BuildRequires:	perl(NEXT)
+BuildRequires:	perl(Moose)
+BuildRequires:	perl(MooseX::Emulate::Class::Accessor::Fast)
+BuildRequires:	perl(MooseX::MethodAttributes::Inheritable)
 BuildRequires:	perl(Path::Class) >= 0.09
 BuildRequires:	perl(Scalar::Util)
+BuildRequires:	perl(Sub::Exporter)
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Test::MockObject)
 BuildRequires:	perl(Text::Balanced)
 BuildRequires:	perl(Text::SimpleTable) >= 0.03
 BuildRequires:	perl(Time::HiRes)
@@ -41,6 +47,8 @@ BuildRequires:	perl(Tree::Simple) >= 1.15
 BuildRequires:	perl(Tree::Simple::Visitor::FindByPath)
 BuildRequires:	perl(URI) >= 1.35
 BuildRequires:	perl(YAML) >= 0.55
+BuildRequires:	perl(namespace::clean)
+
 Requires:	perl >= 5.8.1
 # (misc) not auto-detected; as it's on a line with whitespace, it's not taken
 # in account by perl.req
