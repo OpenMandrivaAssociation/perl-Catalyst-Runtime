@@ -1,21 +1,18 @@
-%define	module		Catalyst-Runtime
-%define	modprefix	Catalyst
-%define	name		perl-%{module}
+%define	upstream_name    Catalyst-Runtime
+%define	upstream_version 5.80005
 
-%define	version		5.71001
-%define	realversion	%{version}
-
-%define	release		%mkrel 1
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+Epoch:      1
 
 Summary:	The Elegant MVC Web Application Framework
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}/
-Source:		http://www.cpan.org/modules/by-module/%{modprefix}/%{module}-%{realversion}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		Catalyst-Runtime-noauto_instal.patch
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel >= 5.8.1
 %endif
@@ -52,6 +49,7 @@ Provides:	perl-Catalyst = %{version}-%{release}
 Obsoletes:	perl-Catalyst
 BuildArch:	noarch
 Buildroot:	%{_tmppath}/%{name}-buildroot
+
 %description
 Catalyst is an elegant web application framework, extremely flexible yet
 extremely simple. It's similar to Ruby on Rails, Spring (Java) and Maypole,
@@ -65,7 +63,7 @@ re-use of existing Perl modules that already handle common web application
 concerns well.
 
 %prep
-%setup -q -n %{module}-%{realversion}
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch0 -p0 -b .noauto_install
 
 %build
@@ -82,11 +80,10 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc Changes
-%{perl_vendorlib}/%{modprefix}*
+%{perl_vendorlib}/Catalyst*
 %{_bindir}/catalyst.pl
 %{_mandir}/*/*
 
 %clean
 rm -rf %{buildroot}
-
 
