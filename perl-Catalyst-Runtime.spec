@@ -8,7 +8,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 2
+Release:	%mkrel 3
 Epoch:      1
 
 Summary:	The Elegant MVC Web Application Framework
@@ -18,9 +18,6 @@ URL:		http://search.cpan.org/dist/%{module}/
 Source0:    http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 Patch0:		Catalyst-Runtime-noauto_instal.patch
 
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel >= 5.8.1
-%endif
 BuildRequires:	perl(B::Hooks::EndOfScope)
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(CGI::Simple::Cookie)
@@ -55,15 +52,15 @@ BuildRequires:	perl(Tree::Simple::Visitor::FindByPath)
 BuildRequires:	perl(URI) >= 1.35
 BuildRequires:	perl(YAML) >= 0.55
 BuildRequires:	perl(namespace::clean)
-
 Requires:	perl >= 5.8.1
 # (misc) not auto-detected; as it's on a line with whitespace, it's not taken
 # in account by perl.req
 Requires:	perl-HTTP-Request-AsCGI >= 0.5
+Requires:	perl(MooseX::Emulate::Class::Accessor::Fast)
 Provides:	perl-Catalyst = %{version}-%{release}
 Obsoletes:	perl-Catalyst
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-buildroot
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Catalyst is an elegant web application framework, extremely flexible yet
