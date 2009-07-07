@@ -1,5 +1,6 @@
 %define	upstream_name    Catalyst-Runtime
-%define	upstream_version 5.80005
+%define	upstream_version 5.80007
+
 # remove circular dependency: catalyst::helper is provided by
 # catalyst-devel, which itself requires catalyst-runtime to be build.
 # moreover, this dependency is only used in an example script, so we do
@@ -8,7 +9,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 3
+Release:	%mkrel 1
 Epoch:      1
 
 Summary:	The Elegant MVC Web Application Framework
