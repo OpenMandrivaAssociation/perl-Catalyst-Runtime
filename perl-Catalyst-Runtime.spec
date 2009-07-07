@@ -54,6 +54,7 @@ BuildRequires:	perl(Tree::Simple) >= 1.15
 BuildRequires:	perl(Tree::Simple::Visitor::FindByPath)
 BuildRequires:	perl(URI) >= 1.35
 BuildRequires:	perl(YAML) >= 0.55
+BuildRequires:	perl(namespace::autoclean)
 BuildRequires:	perl(namespace::clean)
 Requires:	perl >= 5.8.1
 # (misc) not auto-detected; as it's on a line with whitespace, it's not taken
