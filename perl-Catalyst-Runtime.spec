@@ -1,5 +1,5 @@
 %define	upstream_name    Catalyst-Runtime
-%define	upstream_version 5.80007
+%define	upstream_version 5.80011
 
 # remove circular dependency: catalyst::helper is provided by
 # catalyst-devel, which itself requires catalyst-runtime to be build.
@@ -17,7 +17,6 @@ License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}/
 Source0:    http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
-Patch0:		Catalyst-Runtime-noauto_instal.patch
 
 BuildRequires:	perl(B::Hooks::EndOfScope)
 BuildRequires:	perl(Carp)
@@ -80,7 +79,6 @@ concerns well.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%patch0 -p0 -b .noauto_install
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
