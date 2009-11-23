@@ -29,9 +29,9 @@ BuildRequires:	perl(Data::Dump)
 BuildRequires:	perl(File::Modified)
 BuildRequires:	perl(HTML::Entities)
 BuildRequires:	perl(HTTP::Body) >= 0.60.0
-BuildRequires:	perl(HTTP::Headers) >= 1.64
+BuildRequires:	perl(HTTP::Headers) >= 1.640.0
 BuildRequires:	perl(HTTP::Request)
-BuildRequires:	perl(HTTP::Request::AsCGI) >= 0.5
+BuildRequires:	perl(HTTP::Request::AsCGI) >= 0.500.0
 BuildRequires:	perl(HTTP::Response)
 BuildRequires:	perl(LWP::UserAgent)
 BuildRequires:	perl(MRO::Compat)
@@ -48,12 +48,12 @@ BuildRequires:	perl(Task::Weaken)
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::MockObject)
 BuildRequires:	perl(Text::Balanced)
-BuildRequires:	perl(Text::SimpleTable) >= 0.03
+BuildRequires:	perl(Text::SimpleTable) >= 0.30.0
 BuildRequires:	perl(Time::HiRes)
-BuildRequires:	perl(Tree::Simple) >= 1.15
+BuildRequires:	perl(Tree::Simple) >= 1.150.0
 BuildRequires:	perl(Tree::Simple::Visitor::FindByPath)
-BuildRequires:	perl(URI) >= 1.35
-BuildRequires:	perl(YAML) >= 0.55
+BuildRequires:	perl(URI) >= 1.350.0
+BuildRequires:	perl(YAML) >= 0.550.0
 BuildRequires:	perl(namespace::autoclean)
 BuildRequires:	perl(namespace::clean)
 
@@ -62,7 +62,7 @@ Buildroot:	%{_tmppath}/%{name}-%{version}
 
 # (misc) not auto-detected; as it's on a line with whitespace, it's not taken
 # in account by perl.req
-Requires:	perl-HTTP-Request-AsCGI >= 0.5
+Requires:	perl(HTTP::Request::AsCGI) >= 0.500.0
 Requires:	perl(MooseX::Emulate::Class::Accessor::Fast)
 Provides:	perl-Catalyst = %{version}-%{release}
 Obsoletes:	perl-Catalyst
