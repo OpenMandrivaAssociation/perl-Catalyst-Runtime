@@ -1,5 +1,5 @@
 %define	upstream_name    Catalyst-Runtime
-%define	upstream_version 5.80013
+%define upstream_version 5.80014
 
 # remove circular dependency: catalyst::helper is provided by
 # catalyst-devel, which itself requires catalyst-runtime to be build.
@@ -39,6 +39,7 @@ BuildRequires:	perl(Module::Pluggable) >= 3.01
 BuildRequires:	perl(Moose)
 BuildRequires:	perl(MooseX::Emulate::Class::Accessor::Fast)
 BuildRequires:	perl(MooseX::MethodAttributes::Inheritable)
+BuildRequires:  perl(MooseX::Role::WithOverloading)
 BuildRequires:	perl(Path::Class) >= 0.09
 BuildRequires:	perl(Scalar::Util)
 BuildRequires:	perl(String::RewritePrefix)
@@ -55,15 +56,16 @@ BuildRequires:	perl(URI) >= 1.35
 BuildRequires:	perl(YAML) >= 0.55
 BuildRequires:	perl(namespace::autoclean)
 BuildRequires:	perl(namespace::clean)
-Requires:	perl >= 5.8.1
+
+BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}
+
 # (misc) not auto-detected; as it's on a line with whitespace, it's not taken
 # in account by perl.req
 Requires:	perl-HTTP-Request-AsCGI >= 0.5
 Requires:	perl(MooseX::Emulate::Class::Accessor::Fast)
 Provides:	perl-Catalyst = %{version}-%{release}
 Obsoletes:	perl-Catalyst
-BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Catalyst is an elegant web application framework, extremely flexible yet
@@ -82,14 +84,17 @@ concerns well.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%__make
+%make
 
 %check
-%__make test
+%make test
 
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+
+%clean
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -97,7 +102,3 @@ rm -rf %{buildroot}
 %{perl_vendorlib}/Catalyst*
 %{_bindir}/catalyst.pl
 %{_mandir}/*/*
-
-%clean
-rm -rf %{buildroot}
-
