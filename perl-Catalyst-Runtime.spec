@@ -28,19 +28,19 @@ BuildRequires:	perl(Class::MOP)
 BuildRequires:	perl(Data::Dump)
 BuildRequires:	perl(File::Modified)
 BuildRequires:	perl(HTML::Entities)
-BuildRequires:	perl(HTTP::Body) >= 0.6
+BuildRequires:	perl(HTTP::Body) >= 0.60.0
 BuildRequires:	perl(HTTP::Headers) >= 1.64
 BuildRequires:	perl(HTTP::Request)
 BuildRequires:	perl(HTTP::Request::AsCGI) >= 0.5
 BuildRequires:	perl(HTTP::Response)
 BuildRequires:	perl(LWP::UserAgent)
 BuildRequires:	perl(MRO::Compat)
-BuildRequires:	perl(Module::Pluggable) >= 3.01
+BuildRequires:	perl(Module::Pluggable) >= 3.10.0
 BuildRequires:	perl(Moose)
 BuildRequires:	perl(MooseX::Emulate::Class::Accessor::Fast)
 BuildRequires:	perl(MooseX::MethodAttributes::Inheritable)
-BuildRequires:  perl(MooseX::Role::WithOverloading)
-BuildRequires:	perl(Path::Class) >= 0.09
+BuildRequires:  perl(MooseX::Role::WithOverloading) >= 0.30.0
+BuildRequires:	perl(Path::Class) >= 0.90.0
 BuildRequires:	perl(Scalar::Util)
 BuildRequires:	perl(String::RewritePrefix)
 BuildRequires:	perl(Sub::Exporter)
