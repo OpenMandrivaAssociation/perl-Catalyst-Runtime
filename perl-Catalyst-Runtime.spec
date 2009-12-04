@@ -38,6 +38,7 @@ BuildRequires:	perl(MRO::Compat)
 BuildRequires:	perl(Module::Pluggable) >= 3.10.0
 BuildRequires:	perl(Moose)
 BuildRequires:	perl(MooseX::Emulate::Class::Accessor::Fast)
+BuildRequires:	perl(MooseX::Getopt)
 BuildRequires:	perl(MooseX::MethodAttributes::Inheritable)
 BuildRequires:  perl(MooseX::Role::WithOverloading) >= 0.30.0
 BuildRequires:  perl(MooseX::Types::Common::Numeric)
