@@ -1,5 +1,5 @@
 %define	upstream_name    Catalyst-Runtime
-%define upstream_version 5.80021
+%define upstream_version 5.80022
 
 # remove circular dependency: catalyst::helper is provided by
 # catalyst-devel, which itself requires catalyst-runtime to be build.
