@@ -1,2 +1,4 @@
+removed_sources:
+  Catalyst-Runtime-5.80030.tar.gz: 72ed8da08bb94a0ce2f32617cac6158d7c08c92d
 sources:
-  "Catalyst-Runtime-5.80030.tar.gz": 72ed8da08bb94a0ce2f32617cac6158d7c08c92d
+  Catalyst-Runtime-5.90061.tar.gz: c2b0d1f83c748540fd92b2cfc940946434495a6c
