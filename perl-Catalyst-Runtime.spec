@@ -1,5 +1,5 @@
 %define	upstream_name    Catalyst-Runtime
-%define upstream_version 5.90061
+%define upstream_version 5.90132
 
 # remove circular dependency: catalyst::helper is provided by
 # catalyst-devel, which itself requires catalyst-runtime to be build.
@@ -12,16 +12,16 @@
 %endif
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 Epoch:		1
 
 Summary:	The Elegant MVC Web Application Framework
 
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+URL:		https://github.com/perl-catalyst/catalyst-runtime
+Source0:	https://cpan.metacpan.org/authors/id/J/JJ/JJNAPIORK/Catalyst-Runtime-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl(B::Hooks::EndOfScope)
